@@ -1,0 +1,23 @@
+////////////////////////////////////////////////////////////////////////////////
+/// @file
+/// @brief Test of the logged map class.
+////////////////////////////////////////////////////////////////////////////////
+
+#include <iostream>
+#include <unordered_map>
+
+#include "logged_map.h"
+
+using namespace std;
+
+////////////////////////////////////////////////////////////////////////////////
+/// @brief Main driver.
+/// @return Success/fail.
+int
+main() {
+  logged_map<size_t, double, unordered_map> m("log_file.txt");
+  m.insert(5, 3.3);
+  m.insert(7, 2.4);
+  m.get(5) += 3.2;
+  m.remove(7);
+}
